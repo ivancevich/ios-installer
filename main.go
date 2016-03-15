@@ -3,11 +3,14 @@ package main
 import (
 	"html/template"
 	"net/http"
+	"os"
 )
 
 type Data struct {
 	Manifest string
 }
+
+var templatePath = os.Getenv("TEMPLATE_PATH")
 
 func main() {
 	http.HandleFunc("/", installer)
@@ -19,6 +22,6 @@ func installer(w http.ResponseWriter, r *http.Request) {
 	manifest := qs.Get("manifest")
 
 	data := &Data{manifest}
-	t, _ := template.ParseFiles("template.html")
+	t, _ := template.ParseFiles(templatePath)
 	t.Execute(w, data)
 }

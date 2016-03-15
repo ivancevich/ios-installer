@@ -9,6 +9,7 @@ RUN apk add go@community
 RUN rm -rf /var/cache/apk/*
 
 ENV GOPATH /go
+ENV TEMPLATE_PATH /go/src/github.com/ivancevich/ios-installer/template.html
 
 ADD . /go/src/github.com/ivancevich/ios-installer
 RUN go install github.com/ivancevich/ios-installer
