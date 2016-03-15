@@ -12,8 +12,8 @@ ENV GOPATH /go
 ENV TEMPLATE_PATH /go/src/github.com/ivancevich/ios-installer/template.html
 
 ADD . /go/src/github.com/ivancevich/ios-installer
-RUN go install github.com/ivancevich/ios-installer
-COPY template.html /go/bin/ 
+RUN go install github.com/ivancevich/ios-installer 
+
 ENTRYPOINT /go/bin/ios-installer
 
 EXPOSE 8080
