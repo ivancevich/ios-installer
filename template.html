@@ -6,7 +6,7 @@
     </head>
     <body>
         {{if .Manifest}}
-        <a href="{{.Manifest}}">Download</h1>
+        <a href="itms-services://?action=download-manifest&url={{.Manifest}}">Download</h1>
         {{else}}
         <p>Invalid manifest</p>
         {{end}}
