@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {{if .Manifest}}
+        <a href="{{.Manifest}}">Download</h1>
+        {{else}}
+        <p>Invalid manifest</p>
+        {{end}}
+    </body>
+</html>
